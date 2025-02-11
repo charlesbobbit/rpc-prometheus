@@ -54,3 +54,14 @@ scrape_configs:
     static_configs:
       - targets:
         - 'rpc-prometheus.helixstreet.io:9090'
+# Job Blockops        
+  - job_name: "blockops"
+    scrape_interval: 15s
+    honor_labels: true
+    metrics_path: "/federate"
+    params:
+      "match[]":
+        - '{job="blockops"}'
+    static_configs:
+      - targets:
+        - ovhprometheus.blockops.network:9090
