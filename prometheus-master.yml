@@ -64,4 +64,5 @@ scrape_configs:
         - '{job="blockops"}'
     static_configs:
       - targets:
-        - ovhprometheus.blockops.network:9090
+        - blockops-rpc-prometheus.blockops.network:443
+    scheme: https
